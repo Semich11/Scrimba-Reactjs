@@ -1,0 +1,21 @@
+.nav-list{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px 0 20px;
+}
+
+.nav-list li{
+    padding-left: 20px;
+}
+
+.header {
+    display: flex;
+    background-color: aqua;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head-image {
+    width: 55px;
+}
