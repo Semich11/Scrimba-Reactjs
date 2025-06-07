@@ -1,0 +1,22 @@
+.nav-image {
+    width: 55px;
+    color: #DEEBF8;
+    margin-right: 20px;
+}
+
+.nav-element {
+    display: flex;
+    align-items: center;
+}
+
+.nav-header {
+    background-color: #21222A;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.head-text {
+    font: inter;
+    font-weight: 60px;
+}
