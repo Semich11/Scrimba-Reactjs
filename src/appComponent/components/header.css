@@ -1,0 +1,22 @@
+.header {
+    background-color: #F55A5A;
+    padding: 1.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.header__content-holder {
+    min-width: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__image {
+    width: 20px;
+}
+
+.header__span {
+    font-weight: 500;
+    font-family: Inter;
+}
