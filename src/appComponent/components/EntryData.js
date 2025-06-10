@@ -1,9 +1,9 @@
-export default [
+export default  [
     {
         id: 1,
         img: {
             src: "https://scrimba.com/links/travel-journal-japan-image-url",
-            alt: "Mount Fuji"
+            alt: "Mount Fuji" 
         },
         title: "Mount Fuji",
         country: "Japan",

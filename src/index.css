@@ -1,5 +1,5 @@
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 body {
@@ -7,5 +7,5 @@ body {
   font-family: Inter, sans-serif;
   /* background: #27292c; */
   background: #b5b2b2;
-  color: white;
+  color: rgb(123, 0, 0);
 }

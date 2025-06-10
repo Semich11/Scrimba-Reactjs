@@ -53,3 +53,9 @@
     font-weight: 300;
 
 }
+
+.entry__image {
+    width: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
