@@ -1,30 +1,42 @@
-import { useState } from "react"
+export default function Main() {
 
-export default function App() {
-  /**
-     * Challenge: Convert the code below to use an array
-     * held in state instead of a local variable. Initialize 
-     * the state array as an empty array
-     * 
-     * Don't worry about fixing `addFavoriteThing` quite yet.
+    /**
+     * Challenge: Update our app so that when the user enters a
+     * new ingredient and submits the form, it adds that new
+     * ingredient to our list!
      */
-  const [myFavoriteThings, setMyFavoriteThings] = useState([])
-  const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁", 
-  "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
-  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
 
-  setMyFavoriteThings(prevMyFavoriteThings => [...prevMyFavoriteThings, "Test"])
+    const ingredients = ["Chicken", "Oregano", "Tomatoes"]
 
-  function addFavoriteThing() {
-    // We'll work on this next, nothing to do here yet.
-  }
-  
-  return (
-    <main>
-      <button onClick={addFavoriteThing}>Add item</button>
-      <section aria-live="polite">
-        {thingsElements}
-      </section>
-    </main>
-  )
+    const ingredientsListItems = ingredients.map(ingredient => (
+        <li key={ingredient}>{ingredient}</li>
+    ))
+
+    function handleSubmit(event) {
+        /**
+         * Like before, don't worry about this FormData stuff yet.
+         * Just use the newIngredient below to help you finish the
+         * challenge.
+         */
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        const newIngredient = formData.get("ingredient")
+    }
+
+    return (
+        <main>
+            <form onSubmit={handleSubmit} className="add-ingredient-form">
+                <input
+                    type="text"
+                    placeholder="e.g. oregano"
+                    aria-label="Add ingredient"
+                    name="ingredient"
+                />
+                <button>Add ingredient</button>
+            </form>
+            <ul>
+                {ingredientsListItems}
+            </ul>
+        </main>
+    )
 }
