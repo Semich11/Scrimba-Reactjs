@@ -1,45 +1,54 @@
-import { useState } from "react"
+import React from "react"
+import avatar from "./images/user.png"
+import starFilled from "./images/star-filled.png"
+import starEmpty from "./images/star-empty.png"
 
-export default function Main() {
-
+export default function App() {
+    const [contact, setContact] = React.useState({
+        firstName: "John",
+        lastName: "Doe",
+        phone: "+1 (212) 555-1212",
+        email: "itsmyrealname@example.com",
+        isFavorite: false
+    })
     /**
-     * Challenge: Update our app so that when the user enters a
-     * new ingredient and submits the form, it adds that new
-     * ingredient to our list!
+     * Challenge: Fill in the values in the markup
+     * using the properties of our state object above
+     * (Ignore `isFavorite` for now)
      */
 
-    const ingredientsListItems = ingredients.map(ingredient => (
-        <li key={ingredient}>{ingredient}</li>
-    ))
-
-    const [ingredientsList, setIngredients] = useState([])
-
-    function handleSubmit(event) {
-        /**
-         * Like before, don't worry about this FormData stuff yet.
-         * Just use the newIngredient below to help you finish the
-         * challenge.
-         */
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
-        const newIngredient = formData.get("ingredient")
-        setIngredients(prevIngredientsList => [...prevIngredientsList, newIngredient])
+    function toggleFavorite() {
+        console.log("Toggle Favorite")
     }
 
     return (
         <main>
-            <form onSubmit={handleSubmit} className="add-ingredient-form">
-                <input
-                    type="text"
-                    placeholder="e.g. oregano"
-                    aria-label="Add ingredient"
-                    name="ingredient"
+            <article className="card">
+                <img
+                    src={avatar}
+                    className="avatar"
+                    alt="User profile picture of John Doe"
                 />
-                <button>Add ingredient</button>
-            </form>
-            <ul>
-                {ingredientsListItems}
-            </ul>
+                <div className="info">
+                    <button
+                        onClick={toggleFavorite}
+                        aria-pressed={false}
+                        className="favorite-button"
+                    >
+                        <img
+                            src={starEmpty}
+                            alt="empty star icon"
+                            className="favorite"
+                        />
+                    </button>
+                    <h2 className="name">
+                        John Doe
+                    </h2>
+                    <p className="contact">+1 (212) 555-1212</p>
+                    <p className="contact">itsmyrealname@example.com</p>
+                </div>
+
+            </article>
         </main>
     )
 }
