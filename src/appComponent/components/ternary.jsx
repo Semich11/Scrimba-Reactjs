@@ -3,7 +3,9 @@ export default function Ternary(){
         event.preventDefault()
         const formEl = event.currentTarget
         const formData = new FormData(formEl)
-        const 
+        const email = formData.get("email")
+        console.log(email)
+        formEl.reset()
     }
     return (
         <form onSubmit={handleSubmit} method="POST">
