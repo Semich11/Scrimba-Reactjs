@@ -1,13 +1,24 @@
 export default function Ternary(){
     const signUp = (formData) => {
-        const email = formData.get("email")
-        const password = formData.get("password")
-        const employmentStatus = formData.get("employmentStatus")
-        const dietaryRestrictions = formData.getAll("dietaryRestrictions")
-        console.log(email)
-        console.log(password)
-        console.log(employmentStatus)
-        console.log(dietaryRestrictions)
+        // const email = formData.get("email")
+        // const password = formData.get("password")
+        // const employmentStatus = formData.get("employmentStatus")
+        // const dietaryRestrictions = formData.getAll("dietaryRestrictions")
+        // const favColor = formData.get("favColor")
+        // console.log(email)
+        // console.log(password)
+        // console.log(employmentStatus)
+        const data = Object.fromEntries(formData)
+
+        const dietaryData = formData.getAll("dietaryRestrictions")
+
+        const allData = {
+            ...data,
+            dietaryData
+
+        }
+        
+        console.log(allData)
     }
     return (
         <form action={signUp}>
@@ -41,6 +52,13 @@ export default function Ternary(){
                 <label htmlFor="Full-Time">Full-Time</label>
                 <input id="Full-Time" type="checkbox" name="dietaryRestrictions" value="full-time" />
             </fieldset>
+
+            <label htmlFor="favColor">What is your favourite color?</label>
+            <select id="favColor" name="favColor" defaultValue="" required >
+                <option value="" disabled>-- Choose your color --</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+            </select>
 
             <button>submit</button>
         </form>
