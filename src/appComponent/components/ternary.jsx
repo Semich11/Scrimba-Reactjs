@@ -1,54 +1,19 @@
-import React from "react"
-import avatar from "./images/user.png"
-import starFilled from "./images/star-filled.png"
-import starEmpty from "./images/star-empty.png"
-
-export default function App() {
-    const [contact, setContact] = React.useState({
-        firstName: "John",
-        lastName: "Doe",
-        phone: "+1 (212) 555-1212",
-        email: "itsmyrealname@example.com",
-        isFavorite: false
-    })
-    /**
-     * Challenge: Fill in the values in the markup
-     * using the properties of our state object above
-     * (Ignore `isFavorite` for now)
-     */
-
-    function toggleFavorite() {
-        console.log("Toggle Favorite")
+export default function Ternary(){
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const formEl = event.currentTarget
+        const formData = new FormData(formEl)
+        const 
     }
-
     return (
-        <main>
-            <article className="card">
-                <img
-                    src={avatar}
-                    className="avatar"
-                    alt="User profile picture of John Doe"
-                />
-                <div className="info">
-                    <button
-                        onClick={toggleFavorite}
-                        aria-pressed={false}
-                        className="favorite-button"
-                    >
-                        <img
-                            src={starEmpty}
-                            alt="empty star icon"
-                            className="favorite"
-                        />
-                    </button>
-                    <h2 className="name">
-                        {contact.firstName} {contact.lastName}
-                    </h2>
-                    <p className="contact">{contact.phone}</p>
-                    <p className="contact">{contact.email}</p>
-                </div>
+        <form onSubmit={handleSubmit} method="POST">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john_deo@email.com" />
+            <br />
 
-            </article>
-        </main>
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" name="password" />
+            <button>SubmitT</button>
+        </form>
     )
 }
