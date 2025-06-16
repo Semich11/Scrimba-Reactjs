@@ -1,14 +1,10 @@
 export default function Ternary(){
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        const formEl = event.currentTarget
-        const formData = new FormData(formEl)
+    const signUp = (formData) => {
         const email = formData.get("email")
         console.log(email)
-        formEl.reset()
     }
     return (
-        <form onSubmit={handleSubmit} method="POST">
+        <form action={signUp}>
             <label htmlFor="email">Email</label>
             <input type="email" id="email" name="email" placeholder="john_deo@email.com" />
             <br />
