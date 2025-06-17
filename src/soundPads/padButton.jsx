@@ -2,8 +2,7 @@ import React from 'react'
 
 const PadButton = ({color}) => {
   return (
-    <button style={{color: color}}>
-      Hi
+    <button style={{backgroundColor: color}}>
     </button>
   )
 }
