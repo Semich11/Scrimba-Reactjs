@@ -18,7 +18,7 @@ function CustomPage(){
     <>
       {/* <Main /> */}
       {/* <Contact /> */}
-      <Pad />
+      <Pad darkMode={true}/>
       
     </>
   )
