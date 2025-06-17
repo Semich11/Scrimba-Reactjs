@@ -6,6 +6,7 @@ import { createRoot } from "react-dom/client"
 // import { App } from "./appComponent/appPage"
 import { App } from "./joke/app"
 import Main from "./chefClaude/main"
+import Contact from "./contact/contact"
 
 const root = createRoot(document.getElementById("root"))
 
@@ -14,7 +15,8 @@ const root = createRoot(document.getElementById("root"))
 function CustomPage(){
   return(
     <>
-      <Main />
+      {/* <Main /> */}
+      <Contact />
       
     </>
   )
