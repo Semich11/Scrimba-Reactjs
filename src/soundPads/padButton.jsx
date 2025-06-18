@@ -1,19 +1,11 @@
 import { useState } from 'react'
 
-const PadButton = ({color, on}) => {
+const PadButton = (props) => {
 
-  const [lightState, setLightState] = useState(on);
-
-  const lightToggle = () => {
-    console.log(lightState)
-    setLightState(prevLightState => !prevLightState);
-    console.log(lightState)
-  }
-
-
+  const [lightState, setLightState] = useState(props.on);
 
   return (
-    <button onClick={lightToggle} style={{backgroundColor: color}} className={lightState ? "on" : ""} >
+    <button onClick={props.toggle} style={{backgroundColor: props.color}} className={lightState ? "on" : ""} >
     </button>
   )
 }

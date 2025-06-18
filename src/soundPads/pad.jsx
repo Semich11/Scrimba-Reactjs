@@ -7,6 +7,10 @@ import PadButton from "./padButton";
 export default function Pad({darkMode}) {
     const [pad, setPad] = useState(pads);
 
+    function toggle(){
+        console.log("Clicked!")
+    }
+
         /**
      * Challenge: Create a toggle() function that logs
      * "clicked!" to the console
@@ -17,7 +21,7 @@ export default function Pad({darkMode}) {
 
     const buttonElement = pad.map((pad) => {
         return (
-            <PadButton color={pad.color} key={pad.id} on={pad.on} />
+            <PadButton color={pad.color} key={pad.id} on={pad.on} toggle={toggle} />
         )
     })
 
