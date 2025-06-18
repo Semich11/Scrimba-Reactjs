@@ -14,7 +14,7 @@ export default function Pad({darkMode}) {
 
     const buttonElement = pad.map((pad) => {
         return (
-            <PadButton color={pad.color} key={pad.id} />
+            <PadButton color={pad.color} key={pad.id} on={pad.on} />
         )
     })
 

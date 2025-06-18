@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PadButton = ({color}) => {
+const PadButton = ({color, on}) => {
   return (
-    <button style={{backgroundColor: color}}>
+    <button style={{backgroundColor: color}} className={on ? "on" : ""} >
     </button>
   )
 }
