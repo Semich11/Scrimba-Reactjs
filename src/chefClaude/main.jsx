@@ -38,8 +38,12 @@ export default function Main() {
  *    You don't need to save this to localStorage or anything more permanent
  *    than in React's memory for now.)
  *  
+ * Answer: React state "useState()"
+ * 
+ * 
  * 
  * 2. What action from the user should trigger getting the recipe?
+ * Answer: click
  * 
  */
 
