@@ -22,7 +22,6 @@ export default function Main() {
     }
 
 
-
 /**
  * Challenge: Get a recipe from the AI!
  * 
@@ -30,22 +29,16 @@ export default function Main() {
  * to think critically and synthesize the skills you've been
  * learning and practicing up to this point.
  * 
- * We'll start with a mini-quiz:
+ * Using either the `getRecipeFromChefClaude` function or the 
+ * `getRecipeFromMistral` function, make it so that when the user
+ * clicks "Get a recipe", the text response from the AI is displayed
+ * in the <ClaudeRecipe> component.
  * 
- * 1. Think about where the recipe response should live and how you're
- *    going to make sure it doesn't disappear between each state change in
- *    the app. (I don't mean between refreshes of your mini-browser.
- *    You don't need to save this to localStorage or anything more permanent
- *    than in React's memory for now.)
- *  
- * Answer: React state "useState()"
- * 
- * 
- * 
- * 2. What action from the user should trigger getting the recipe?
- * Answer: click
- * 
+ * For now, just have it render the raw markdown that the AI returns,
+ * don't worry about making it look nice yet. (We're going to use a
+ * package that will render the markdown for us soon.)
  */
+
 
     return (
         <main>
