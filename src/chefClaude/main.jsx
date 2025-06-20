@@ -1,17 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import "./main.css"
 import IngredientsList from "./claudeRecipe/ingredientsList"
 import ClaudeRecipe from "./claudeRecipe/claudeRecipe"
+import { getRecipeFromMistral } from "./claudeRecipe/ai"
+
 
 export default function Main() {
 
     const [ingredients, setIngredients] = React.useState(
         ["all the main spices", "pasta", "ground beef", "tomato paste"]
     )
-    const [recipeShown, setRecipeShown] = React.useState(false)
     
-    function toggleRecipeShown() {
-        setRecipeShown(prevShown => !prevShown)
+    const [recipe, setRecipe] = useState("");
+    
+    async function toggleRecipeShown() {
+        // setRecipeShown(prevShown => !prevShown)
+        const AIRecipe = await getRecipeFromMistral(ingredients);
+        console.log(`Clicked!!: ${AIRecipe}`)
+        setRecipe(AIRecipe);
     }
 
 
@@ -21,6 +27,7 @@ export default function Main() {
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
+    // const AIRecipe = getRecipeFromMistral(ingredients);
 
 /**
  * Challenge: Get a recipe from the AI!
@@ -38,6 +45,8 @@ export default function Main() {
  * don't worry about making it look nice yet. (We're going to use a
  * package that will render the markdown for us soon.)
  */
+
+
 
 
     return (
@@ -59,7 +68,7 @@ export default function Main() {
                 />
             }
             
-            {recipeShown && <ClaudeRecipe/>}
+            {recipe && <ClaudeRecipe AIRecipe={recipe} />}
         </main>
     )
 }
