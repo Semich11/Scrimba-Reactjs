@@ -1,15 +1,23 @@
 import { useState } from "react";
 import "./main.css";
 export default function Main() {
-    const [meme, setMeme] = useState({ topText:"Top Text", bottomText: "Button Text", imageUrl: "http://i.imgflip.com/1bij.jpg" })
+  const [meme, setMeme] = useState({
+    topText: "Top Text",
+    bottomText: "Button Text",
+    imageUrl: "http://i.imgflip.com/1bij.jpg",
+  });
 
+  function handleChange(event){
+    const {value} = event.currentTarget
+    console.log(value)
+  }
 
   return (
     <main>
       <div className="form">
         <label>
           {meme.topText}
-          <input type="text" placeholder="One does not simply" name="topText" />
+          <input type="text" placeholder="One does not simply" name="topText" onChange={handleChange} />
         </label>
 
         <label>
