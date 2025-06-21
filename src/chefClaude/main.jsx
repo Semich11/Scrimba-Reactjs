@@ -7,9 +7,7 @@ import { getRecipeFromMistral } from "./claudeRecipe/ai"
 
 export default function Main() {
 
-    const [ingredients, setIngredients] = React.useState(
-        ["all the main spices", "pasta", "ground beef", "tomato paste"]
-    )
+    const [ingredients, setIngredients] = React.useState([])
     
     const [recipe, setRecipe] = useState("");
     

@@ -6,7 +6,8 @@ import { createRoot } from "react-dom/client"
 // import './index.css'
 // import { App } from "./appComponent/appPage"
 // import { App } from "./joke/app"
-import Main from "./chefClaude/main"
+// import Main from "./chefClaude/main"
+import Main from "./memeGenerator/main"
 // import Contact from "./contact/contact"
 
 const root = createRoot(document.getElementById("root"))
