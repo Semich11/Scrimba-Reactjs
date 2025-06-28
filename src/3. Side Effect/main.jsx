@@ -2,7 +2,7 @@ import React from "react"
 
 export default function App(props) {
     const [starWarsData, setStarWarsData] = React.useState(null)
-    
+    console.log("Rendered!!!")
     /**
      * Challenge:
      * Instead of console logging the data, save it in state
